@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color picker</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" /> 
+</head>
+<body>
+    <h1>Experience the colors of life</h1>
+    <p id="red">Red:</p>
+    <input type="range" id="red1" name="vol" min="0" max="255" value="0"  > 
+    <p id="green">Green:</p>
+    <input type="range" id="green1" name="vol" min="0" max="255" value="99"  >    
+    <p id="blue">Blue:</p>
+    <input type="range" id="blue1" name="vol" min="0" max="255"  value="71"  >    
+    <br><br>
+    <span>color:</span><textarea id="myText" rows="1" cols="18" placeholder="rgb(0 ,99 ,71 )"></textarea>
+    <div id="box">
+    </div>
+    <script type="text/javascript">
+      var input = document.querySelectorAll("input");
+          for(var i = 0; i < input.length; i++){
+          input[i].addEventListener("input", function(){
+              var red = document.getElementById("red1").value,
+                  green = document.getElementById("green1").value,
+                  blue = document.getElementById("blue1").value;
+                  var display = document.getElementById("box");
+              display.style.background = "rgb(" + red + ", " + green + ", " + blue + ")";
+              document.getElementById("myText").innerHTML = "rgb(" + red + ", " + green + ", " + blue + ")";
+          });
+      }  
+    </script>
+</body>
+</html>
